@@ -1,6 +1,6 @@
 {
   "main": "dist/index.js",
-  "name": "damerau-levenshtein",
+  "name": "@guswpm/damerau-levenshtein",
   "version": "1.0.1",
   "description": "Just a raw Damerau Levenshtein implementation, nothing more",
   "keywords": [
