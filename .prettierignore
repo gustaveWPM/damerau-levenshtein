@@ -3,3 +3,8 @@ node_modules
 dist
 pnpm-lock.yaml
 .eslintrc.cjs
+
+.changeset/
+prettier.config.d.cts
+vitest.config.d.mts
+vitest.config.mjs

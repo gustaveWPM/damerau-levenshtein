@@ -1,34 +1,48 @@
 {
+  "main": "dist/index.js",
   "name": "damerau-levenshtein",
   "version": "1.0.0",
   "description": "Just a raw Damerau Levenshtein implementation, nothing more",
-  "main": "dist/damerau-levenshtein.cjs.js",
-  "module": "dist/damerau-levenshtein.esm.js",
+  "keywords": [
+    "damerau levenshtein"
+  ],
+  "homepage": "https://github.com/gustaveWPM/damerau-levenshtein",
+  "bugs": {
+    "url": "https://github.com/gustaveWPM/damerau-levenshtein/issues"
+  },
+  "author": "gustaveWPM",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustaveWPM/damerau-levenshtein.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
   "scripts": {
     "prepare": "husky",
-    "prebuild": "tsc --project tsconfig.json && preconstruct fix",
-    "build": "preconstruct build",
-    "prepub": "pnpm build",
-    "pub": "pnpm publish",
+    "build": "tsc",
+    "dev": "vitest",
     "test": "vitest --run",
     "coverage": "vitest --run --coverage.enabled --coverage.all=false",
     "coverage-all": "vitest --run --coverage.enabled --coverage.all",
     "vitest:ui": "vitest --ui",
     "format": "prettier --log-level warn --write .",
+    "commit": "git-cz",
+    "ci": "pnpm ci:format-check && pnpm ci:lint && pnpm ci:typecheck && pnpm test && pnpm build && pnpm check-exports",
+    "prepublishOnly": "pnpm run ci",
+    "local-release": "changeset version && changeset publish",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "ci:format-check": "prettier . --check",
     "ci:lint": "eslint . --cache --max-warnings 0",
-    "ci:typecheck-project": "tsc --noEmit --pretty",
-    "commit": "git-cz"
+    "ci:typecheck": "tsc --noEmit --pretty"
   },
-  "keywords": [
-    "damerau levenshtein"
-  ],
-  "author": "gustaveWPM",
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.29.5",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/cz-commitlint": "^19.8.1",
-    "@preconstruct/cli": "^2.8.12",
     "@types/eslint": "^8.56.10",
     "@types/node": "^24.0.10",
     "@typescript-eslint/eslint-plugin": "^7.9.0",

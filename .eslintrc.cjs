@@ -36,7 +36,7 @@ module.exports = {
         "*Adapter.js",
       ],
       rules: {
-        "import/no-extraneous-dependencies": [ERROR, { devDependencies: true }],
+        "import/no-extraneous-dependencies": [OFF, { devDependencies: true }],
       },
     },
   ],

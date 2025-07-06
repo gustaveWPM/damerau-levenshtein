@@ -7,17 +7,20 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
 
     "strict": true,
     "noImplicitOverride": true,
 
     "module": "NodeNext",
-    "rootDir": "src",
     "outDir": "dist",
+    "rootDir": "src",
     "sourceMap": true,
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationMap": true,
+
     "lib": ["es2022"]
   },
-  "include": ["src/index.ts"]
+
+  "include": ["src/"]
 }

@@ -79,7 +79,7 @@ jobs:
       - name: Install project
         run: pnpm install
       - name: Typecheck
-        run: pnpm ci:typecheck-project
+        run: pnpm ci:typecheck
 
   test:
     strategy:
@@ -123,3 +123,23 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
+
+  check-exports:
+    runs-on: 'ubuntu-latest'
+    if: github.event.pull_request.draft == false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - name: Install project
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Check exports
+        run: pnpm check-exports

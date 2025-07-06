@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import damerauLevenshtein, { lazyDamerauLevenshtein } from '../';
+import { lazyDamerauLevenshtein, damerauLevenshtein } from '../damerauLevenshtein.js';
 
 // https://github.com/aldebaran/libport/blob/master/tests/libport/damerau-levenshtein-distance.cc
 
