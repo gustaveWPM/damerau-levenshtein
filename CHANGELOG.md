@@ -1,5 +1,11 @@
 # damerau-levenshtein
 
+## 1.2.1
+
+### Patch Changes
+
+- 42ef439: oopsie, built again the dist folder
+
 ## 1.2.0
 
 ### Minor Changes
