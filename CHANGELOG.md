@@ -1,5 +1,11 @@
 # damerau-levenshtein
 
+## 1.2.0
+
+### Minor Changes
+
+- c979a45: better tsconfig
+
 ## 1.1.0
 
 ### Minor Changes
