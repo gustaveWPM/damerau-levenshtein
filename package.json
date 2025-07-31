@@ -35,7 +35,7 @@
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "ci:format-check": "prettier . --check",
     "ci:lint": "eslint . --cache --max-warnings 0",
-    "ci:typecheck": "tsc --noEmit --pretty"
+    "ci:typecheck": "tsc --noEmit --pretty --project tsconfig.ci.json"
   },
   "license": "MIT",
   "devDependencies": {

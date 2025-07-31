@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -22,5 +23,6 @@
     "lib": ["es2022"]
   },
 
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["**/*.test-d.ts", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx", "**/__tests__/**"]
 }
